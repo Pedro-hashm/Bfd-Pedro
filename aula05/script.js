@@ -34,25 +34,46 @@ function getNotas() {
     let soma1 = 0
     let soma2 = 0
     let soma3 = 0
+    let status1 = ''
+    let status2 = ''
+    let status3 = ''
     
     for (let j = 0; j < notas[l].length; j++) {
-        soma1 += notas[l][j]
+        soma1 += notas[j][l]
     } 
 
     l = 1
 
     for (let j = 0; j < notas[l].length; j++) {
-        soma2 += notas[l][j]
+        soma2 += notas[j][l]
     }
 
     l = 2
 
     for (let j = 0; j < notas[l].length; j++) {
-        soma3 += notas[l][j]
+        soma3 += notas[j][l]
+    }
+
+    if (soma1/3 < 7) {
+        status1 = 'red'
+    } else {
+        status1 = 'green'
+    }
+
+    if (soma2/3 < 7) {
+        status2 = 'red'
+    } else {
+        status2 = 'green'
+    }
+
+    if (soma3/3 < 7) {
+        status3 = 'red'
+    } else {
+        status3 = 'green'
     }
 
     result = document.getElementById('result')
-    result.innerHTML = `<p>Aluno 1: ${soma1/3}</p> <p>Aluno 2: ${soma2/3}</p><p>Aluno 3: ${soma3/3}</p>`
+    result.innerHTML = `<p id=${status1}>Aluno 1: ${soma1/3}</p> <p id=${status2}>Aluno 2: ${soma2/3}</p><p id=${status3}>Aluno 3: ${soma3/3}</p>`
     
 
 }

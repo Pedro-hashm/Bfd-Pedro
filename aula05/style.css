@@ -32,3 +32,11 @@ ul {
     font-size: larger;
     flex-direction: column;
 }
+
+#green {
+    color: greenyellow;
+}
+
+#red {
+    color: red;
+}
