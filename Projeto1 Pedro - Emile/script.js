@@ -18,16 +18,25 @@ botão.addEventListener('click', function() {
     if (Number.isNaN(n1)) {
         alert('Preencha as Nota 1')
         return
+    } else if (n1 > 10 || n1 < 0) {
+        alert('A nota precisa ser menor que 10 e maior que 0')
+        return
     }
 
     if (Number.isNaN(n2)) {
         alert('Preencha as Nota 2')
+        return
+    } else if (n2 > 10 || n2 < 0) {
+        alert('A nota precisa ser menor que 10 e maior que 0')
         return
     }
 
     if (Number.isNaN(n3)) {
         alert('Preencha as Nota 3')
         return
+    } else if (n2 > 10 || n2 < 0) {
+        alert('A nota precisa ser menor que 10 e maior que 0')
+        return  
     }
 
     let linha = document.createElement('tr')
