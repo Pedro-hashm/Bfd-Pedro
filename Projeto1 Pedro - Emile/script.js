@@ -1,27 +1,45 @@
 let botão = document.querySelector('button')
 
-let textDiv = document.getElementById('DIV ONDE VAI FICAR O TEXTO')
-
 botão.addEventListener('click', function() {
 
-    let nome = document.getElementById('nome')
+    let tabela = document.querySelector('#tabelaNotas tbody')
 
-    let n1 = parseFloat(document.getElementById('n1'))
-    let n2 = parseFloat(document.getElementById('n2'))
-    let n3 = parseFloat(document.getElementById('n3'))
+    let nome = document.getElementById('nome').value
 
+    let n1 = parseFloat(document.getElementById('nota1').value)
+    let n2 = parseFloat(document.getElementById('nota2').value)
+    let n3 = parseFloat(document.getElementById('nota3').value)
+
+    let linha = document.createElement('tr'); // Cria a linha
+
+    let celN1 = document.createElement('td')
+    celN1.textContent = n1
+
+    let celN2 = document.createElement('td')
+    celN2.textContent = n2
+
+    let celN3 = document.createElement('td')
+    celN3.textContent = n3
+
+    let celMedia = document.createElement('td')
     let media_aluno = get_media(n1,n2,n3)
-    let situação_aluno = is_approved(media_aluno)
+    celMedia.textContent = media_aluno
 
-    textDiv.innerHTML = 
-    `
-    <p>ALUNO:${nome}</p>
-    <p>Nota 1:${n1}</p>
-    <p>Nota 2:${n2}</p>
-    <p>Nota 3:${n3}</p>
-    <p>Média: ${media_aluno}</p>
-    <p>Situação: ${situação_aluno}
-    `
+    let celSituacao = document.createElement('td')
+    let situação_aluno = is_approved(media_aluno)
+    celSituacao.textContent = situação_aluno
+
+    let celAluno = document.createElement('td')
+    celAluno.textContent = nome
+
+    linha.appendChild(celAluno)
+    linha.appendChild(celN1)
+    linha.appendChild(celN2)
+    linha.appendChild(celN3)
+    linha.appendChild(celMedia)
+    linha.appendChild(celSituacao)
+
+    tabela.appendChild(linha)
 
 })
 
@@ -31,7 +49,7 @@ function get_media(n1, n2, n3) {
 }
 
 function is_approved(media) {
-    let situação = ""
+    let situação = "null"
 
     if (media >= 7) {
         situação = "aprovado"
@@ -40,4 +58,6 @@ function is_approved(media) {
     } else {
         situação = "reprovado"
     }
+
+    return situação
 }
