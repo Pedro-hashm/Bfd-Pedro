@@ -6,12 +6,32 @@ botão.addEventListener('click', function() {
 
     let nome = document.getElementById('nome').value
 
+    if (nome == "") {
+        alert('digite um nome')
+        return
+    }
+
     let n1 = parseFloat(document.getElementById('nota1').value)
     let n2 = parseFloat(document.getElementById('nota2').value)
     let n3 = parseFloat(document.getElementById('nota3').value)
 
+    if (Number.isNaN(n1)) {
+        alert('Preencha as Nota 1')
+        return
+    }
+
+    if (Number.isNaN(n2)) {
+        alert('Preencha as Nota 2')
+        return
+    }
+
+    if (Number.isNaN(n3)) {
+        alert('Preencha as Nota 3')
+        return
+    }
+
     let linha = document.createElement('tr')
-    
+
     let celN1 = document.createElement('td')
     celN1.textContent = n1
 
@@ -47,7 +67,8 @@ botão.addEventListener('click', function() {
 
 function get_media(n1, n2, n3) {
     let media = (n1+n2+n3)/3
-    return media
+    media_fixed = media.toFixed
+    return parseFloat(media.toFixed(media))
 }
 
 function is_approved(media) {
