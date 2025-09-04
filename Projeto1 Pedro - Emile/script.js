@@ -10,7 +10,7 @@ botão.addEventListener('click', function() {
         alert('Digite um nome')
         return
     } else if (tem_numero(nome)) {
-        alert('Digite apenas numeros')
+        alert('Digite apenas letras')
         return
     }
 
