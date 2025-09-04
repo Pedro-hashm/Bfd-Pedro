@@ -7,7 +7,10 @@ botão.addEventListener('click', function() {
     let nome = document.getElementById('nome').value
 
     if (nome == "") {
-        alert('digite um nome')
+        alert('Digite um nome')
+        return
+    } else if (tem_numero(nome)) {
+        alert('Digite apenas numeros')
         return
     }
 
@@ -92,4 +95,9 @@ function is_approved(media) {
     }
 
     return situação
+}
+
+function tem_numero(text) {
+    let contem_numero = text.match(/\d/);
+    return Boolean(contem_numero)
 }
