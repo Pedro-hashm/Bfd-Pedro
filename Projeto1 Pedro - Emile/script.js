@@ -10,8 +10,8 @@ botão.addEventListener('click', function() {
     let n2 = parseFloat(document.getElementById('nota2').value)
     let n3 = parseFloat(document.getElementById('nota3').value)
 
-    let linha = document.createElement('tr'); // Cria a linha
-
+    let linha = document.createElement('tr')
+    
     let celN1 = document.createElement('td')
     celN1.textContent = n1
 
@@ -38,7 +38,9 @@ botão.addEventListener('click', function() {
     linha.appendChild(celN3)
     linha.appendChild(celMedia)
     linha.appendChild(celSituacao)
-
+    
+    console.log(linha)
+    
     tabela.appendChild(linha)
 
 })
