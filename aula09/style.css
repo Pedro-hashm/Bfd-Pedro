@@ -7,6 +7,11 @@ h1 {
     color: #d4a373;
 }
 
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
 button {
     color: #d4a373;
     font-size: 1.2rem;
