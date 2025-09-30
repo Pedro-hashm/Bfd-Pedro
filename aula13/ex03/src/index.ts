@@ -12,5 +12,5 @@ class Produto {
     }
 }
 
-const produto = new Produto('mouse', 100)
-produto.desconto(40)
+const produto = new Produto('mouse', 200)
+produto.desconto(10)

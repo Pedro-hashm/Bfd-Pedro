@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    height: 100vh;
+    background-color: #faebd7;
+    font-size: medium;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+input {
+    padding: 1rem;
+    border: 2px solid #c5a47a;
+    border-radius: 12px;
+}
+
+button {
+    background-color: white;
+    border-radius: 24px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.to-do {
+    background-color: #cecece;
+    padding: 1rem;
+}
+
+.done {
+    background-color: aquamarine;
+    padding: 1rem;
+}
+
